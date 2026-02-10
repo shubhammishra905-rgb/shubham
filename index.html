@@ -2,53 +2,77 @@
 <html lang="en">
 <head>
  <meta charset="UTF-8">
- <title>Be My Valentine </title>
+ <title>My Valentine </title>
  <style>
  body {
  margin: 0;
- height: 100vh;
  font-family: 'Segoe UI', sans-serif;
  background: linear-gradient(135deg, #ff4d6d, #ff8fab);
- display: flex;
- align-items: center;
- justify-content: center;
  color: white;
- }
- .card {
- background: rgba(0,0,0,0.25);
- padding: 35px;
- border-radius: 20px;
  text-align: center;
- max-width: 420px;
+ }
+
+ .card {
+ margin: 40px auto;
+ background: rgba(0,0,0,0.25);
+ padding: 30px;
+ border-radius: 20px;
+ max-width: 450px;
  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
  }
+
  h1 {
- font-size: 32px;
  margin-bottom: 10px;
  }
+
  p {
  font-size: 18px;
  line-height: 1.5;
  }
- .buttons {
- margin-top: 25px;
+
+ .gallery {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 12px;
+ margin-top: 20px;
  }
+
+ .gallery img {
+ width: 100%;
+ border-radius: 15px;
+ cursor: pointer;
+ transition: transform 0.3s;
+ }
+
+ .gallery img:hover {
+ transform: scale(1.05);
+ }
+
  button {
+ margin-top: 20px;
  padding: 12px 22px;
  font-size: 16px;
  border: none;
  border-radius: 25px;
- cursor: pointer;
- margin: 8px;
- }
- .yes {
  background: #00c853;
  color: white;
+ cursor: pointer;
  }
- .no {
- background: #ff1744;
- color: white;
- position: relative;
+
+ /* Lightbox */
+ .lightbox {
+ display: none;
+ position: fixed;
+ inset: 0;
+ background: rgba(0,0,0,0.8);
+ justify-content: center;
+ align-items: center;
+ }
+
+ .lightbox img {
+ max-width: 90%;
+ max-height: 90%;
+ border-radius: 15px;
  }
  </style>
 </head>
@@ -57,34 +81,47 @@
  <div class="card">
  <h1>Hey </h1>
  <p>
- From random smiles to endless memories,<br>
- every moment with you feels special.<br><br>
- Will you be my Valentine? 
+ Every smile, every moment,<br>
+ every memory with you means the world to me <br><br>
+ Will you be my Valentine?
  </p>
 
- <div class="buttons">
- <button class="yes" onclick="yesClick()">Yes </button>
- <button class="no" onmouseover="moveButton(this)">No </button>
+ <div class="gallery">
+ <img src="photo1.jpg" onclick="openImg(this)">
+ <img src="photo2.jpg" onclick="openImg(this)">
+ <img src="photo3.jpg" onclick="openImg(this)">
+ <img src="photo4.jpg" onclick="openImg(this)">
  </div>
+
+ <button onclick="yesClick()">Yes </button>
+ </div>
+
+ <div class="lightbox" onclick="closeImg()">
+ <img id="lightboxImg">
  </div>
 
  <script>
- function yesClick() {
- document.body.innerHTML = `
- <div style="text-align:center;color:white;">
- <h1>Yayyy!! </h1>
- <p>You just made my day </p>
- <p>Happy Valentine’s </p>
- </div>
- `;
+ function openImg(img) {
+ document.getElementById("lightboxImg").src = img.src;
+ document.querySelector(".lightbox").style.display = "flex";
  }
 
- function moveButton(btn) {
- btn.style.position = "absolute";
- btn.style.top = Math.random() * 80 + "%";
- btn.style.left = Math.random() * 80 + "%";
+ function closeImg() {
+ document.querySelector(".lightbox").style.display = "none";
+ }
+
+ function yesClick() {
+ document.body.innerHTML = `
+ <div style="height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+ <h1>Yayyy </h1>
+ <p>You just made me the happiest </p>
+ <p>Happy Valentine’s Day </p>
+ </div>
+ `;
  }
  </script>
 
 </body>
 </html>
+
+Thanks & Regards Shubham Mishra
