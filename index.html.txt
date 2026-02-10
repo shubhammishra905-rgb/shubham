@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Valentine 💖</title>
+<style>
+body {
+margin: 0;
+font-family: 'Arial', sans-serif;
+background: linear-gradient(135deg, #ff758c, #ff7eb3);
+color: white;
+text-align: center;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.card {
+background: rgba(0,0,0,0.25);
+padding: 30px;
+border-radius: 20px;
+max-width: 400px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+img {
+width: 200px;
+border-radius: 15px;
+margin-bottom: 15px;
+}
+h1 {
+margin: 10px 0;
+}
+button {
+background: #ff4d6d;
+border: none;
+padding: 12px 20px;
+border-radius: 25px;
+font-size: 16px;
+color: white;
+cursor: pointer;
+margin-top: 15px;
+}
+button:hover {
+background: #ff1f4b;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<img src="https://i.imgur.com/Z6xQZ6F.png" alt="Love">
+<h1>Hey ❤️</h1>
+<p>
+Every day feels better with you in it.<br>
+Will you be my Valentine? 💕
+</p>
+<button onclick="alert('Yayyy! 💖 I knew it!')">
+Yes 💘
+</button>
+</div>
+
+</body>
+</html>
